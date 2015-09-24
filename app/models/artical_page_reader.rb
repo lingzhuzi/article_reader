@@ -24,7 +24,7 @@ class ArticalPageReader
         reader.parse
         @content << "\n"
         @content << reader.content
-        @images.concat! reader.images
+        @images.concat(reader.images)
       end
     end
   end
@@ -59,7 +59,7 @@ class ArticalPageReader
           text = temp_file.read
           save_to_file(file_name, text, true)
           temp_file.close
-          @images << file_name
+          @images << file_name.gsub /^public\//, ''
         end
       end
     end

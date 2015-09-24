@@ -28,7 +28,7 @@ class ReaderConfigsController < ApplicationController
 
     respond_to do |format|
       if @reader_config.save
-        format.html { redirect_to @reader_config, notice: 'Reader config was successfully created.' }
+        format.html { redirect_to reader_configs_path, notice: '采集配置创建成功' }
         format.json { render :show, status: :created, location: @reader_config }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ReaderConfigsController < ApplicationController
   def update
     respond_to do |format|
       if @reader_config.update(reader_config_params)
-        format.html { redirect_to @reader_config, notice: 'Reader config was successfully updated.' }
+        format.html { redirect_to reader_configs_path, notice: '采集配置修改成功' }
         format.json { render :show, status: :ok, location: @reader_config }
       else
         format.html { render :edit }
@@ -56,19 +56,18 @@ class ReaderConfigsController < ApplicationController
   def destroy
     @reader_config.destroy
     respond_to do |format|
-      format.html { redirect_to reader_configs_url, notice: 'Reader config was successfully destroyed.' }
+      format.html { redirect_to reader_configs_url, notice: '采集配置删除成功' }
       format.json { head :no_content }
     end
   end
 
-
-  # POST
+  # POST /reader_config/1/run
   def run
     job = ArticalReadJob.perform_later(@reader_config)
-    Task.create(job_id: job.job_id, reader_config_id: @reader_config.id, status: Task::WAITING)
+    task = Task.create(job_id: job.job_id, reader_config_id: @reader_config.id, status: Task::WAITING)
 
     respond_to do |format|
-      format.html { redirect_to reader_configs_url, notice: '采集任务已添加' }
+      format.html { redirect_to task_url(task), notice: '采集任务已添加' }
       format.json { head :no_content }
     end
   end

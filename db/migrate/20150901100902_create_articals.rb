@@ -3,7 +3,8 @@ class CreateArticals < ActiveRecord::Migration
     create_table :articals do |t|
       t.string :title
       t.string :url
-      t.string :content
+      t.text   :content
+      t.text   :images
       t.references :reader_config, index: true, foreign_key: true
 
       t.timestamps null: false

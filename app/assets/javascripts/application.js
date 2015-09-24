@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function(){
+  var $notice = $('#notice');
+  if($notice.text() != ''){
+    $notice.show();
+    setTimeout(function(){
+      $notice.hide('slow');
+    }, 3000);
+  }
+})

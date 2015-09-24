@@ -20,3 +20,12 @@
     <dd><%= @task.error %></dd>
   <% end %>
 </dl>
+<%= content_for :js do  %>
+  <script type="text/javascript">
+    $(function(){
+      window.setTimeout(function(){
+        location.href = location.href;
+      }, 5000);
+    });
+  </script>
+<% end %>

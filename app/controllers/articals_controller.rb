@@ -80,7 +80,7 @@ class ArticalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artical_params
-      params.require(:artical).permit(:title, :url, :content, :reader_config_id)
+      params.require(:artical).permit(:title, :url, :content, :reader_config_id, :images)
     end
 
     def find_articals

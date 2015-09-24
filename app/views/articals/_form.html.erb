@@ -11,23 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group container-fluid">
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :title %></div>
+      <div class="col-md-5"><%= f.text_field :title, class: 'form-control' %></div>
+    </div>
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :url %></div>
+      <div class="col-md-5"><%= f.text_field :url, class: 'form-control', readonly: true %></div>
+    </div>
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :content %></div>
+      <div class="col-md-5"><%= f.text_area :content, class: 'form-control', rows: 30, cols: 200 %></div>
+    </div>
+    <div class="row field-row">
+      <div class="col-md-7 center"><%= f.submit "提交", class: "btn btn-primary" %></div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :reader_config_id %><br>
-    <%= f.text_field :reader_config_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

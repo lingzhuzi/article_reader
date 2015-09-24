@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
-
+<h3><%= @artical.title %></h3>
 <p>
-  <strong>Title:</strong>
-  <%= @artical.title %>
+  <%= link_to '文章列表', articals_path %>
+  <%= link_to '编辑', edit_artical_path(@artical) %>
 </p>
 
 <p>
@@ -11,14 +10,18 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @artical.content %>
+  <strong>采集配置:</strong>
+  <%= @artical.reader_config_name %>
 </p>
 
 <p>
-  <strong>Reader config:</strong>
-  <%= @artical.reader_config %>
+  <strong>内容:</strong>
+  <pre><%= @artical.content %></pre>
 </p>
 
-<%= link_to 'Edit', edit_artical_path(@artical) %> |
-<%= link_to 'Back', articals_path %>
+<p>
+  <strong>图片:</strong>
+  <% @artical.images.split(',').each do |img_path| %>
+    <p><img src="/<%= img_path %>"></p>
+  <% end %>
+</p>
