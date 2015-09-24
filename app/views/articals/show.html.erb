@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @artical.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @artical.url %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @artical.content %>
+</p>
+
+<p>
+  <strong>Reader config:</strong>
+  <%= @artical.reader_config %>
+</p>
+
+<%= link_to 'Edit', edit_artical_path(@artical) %> |
+<%= link_to 'Back', articals_path %>

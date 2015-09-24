@@ -1,0 +1,83 @@
+<%= form_for(@reader_config) do |f| %>
+  <% if @reader_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reader_config.errors.count, "error") %> prohibited this reader_config from being saved:</h2>
+
+      <ul>
+      <% @reader_config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group container-fluid">
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :name %></div>
+      <div class="col-md-5"><%= f.text_field :name, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :index_url %></div>
+      <div class="col-md-5"><%= f.text_field :index_url, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2"><label>文章列表页</label></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :index_artical_link_selector %></div>
+      <div class="col-md-5"><%= f.text_field :index_artical_link_selector, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :index_next_page_selector %></div>
+      <div class="col-md-5"><%= f.text_field :index_next_page_selector, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :index_next_page_content %></div>
+      <div class="col-md-5"><%= f.text_field :index_next_page_content, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :index_pages %></div>
+      <div class="col-md-5"><%= f.number_field :index_pages, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2"><label>文章详情页</label></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :artical_content_selectors %></div>
+      <div class="col-md-5"><%= f.text_field :artical_content_selectors, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :artical_img_selectors %></div>
+      <div class="col-md-5"><%= f.text_field :artical_img_selectors, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :artical_next_page_selector %></div>
+      <div class="col-md-5"><%= f.text_field :artical_next_page_selector, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :artical_next_page_content %></div>
+      <div class="col-md-5"><%= f.text_field :artical_next_page_content, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-2 title"><%= f.label :artical_pages %></div>
+      <div class="col-md-5"><%= f.number_field :artical_pages, class: 'form-control' %></div>
+    </div>
+
+    <div class="row field-row">
+      <div class="col-md-7 center"><%= f.submit "创建", class: "btn btn-primary" %></div>
+    </div>
+  </div>
+
+<% end %>

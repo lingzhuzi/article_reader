@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文章采集</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default menu-bar">
+      <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="<%= menu_style('reader_configs') %>"><a href="/reader_configs">采集配置</a></li>
+            <li class="<%= menu_style('tasks') %>"><a href="/tasks">任务</a></li>
+            <li class="<%= menu_style('articals') %>"><a href="/articals">文章</a></li>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield :js %>
+
+</body>
+</html>

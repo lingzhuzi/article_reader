@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  index_url: MyText
+  index_pages: 1
+  index_next_page_selector: MyString
+  index_next_page_content: MyString
+  index_artical_link_selector: MyString
+  artical_content_selector: MyString
+  artical_next_page_selectors: MyString
+  artical_next_page_content: MyString
+
+two:
+  name: MyString
+  index_url: MyText
+  index_pages: 1
+  index_next_page_selector: MyString
+  index_next_page_content: MyString
+  index_artical_link_selector: MyString
+  artical_content_selector: MyString
+  artical_next_page_selectors: MyString
+  artical_next_page_content: MyString

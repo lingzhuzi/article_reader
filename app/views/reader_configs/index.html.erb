@@ -1,0 +1,24 @@
+<h3>配置列表</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= link_to '新建', new_reader_config_path %>
+</p>
+
+<ul class="list-group">
+  <% @reader_configs.each do |reader_config| %>
+    <li class="list-group-item row">
+      <label class="title col-md-10 col-sm-10"><%= link_to reader_config.name, reader_config_path(reader_config), target: "_blank" %></label>
+      <label class="options col-md-2 col-sm-2">
+        <%= link_to '采集', run_reader_config_path(reader_config), method: :post, data: { confirm: '确定开始采集？' } %>
+        <%= link_to '编辑', edit_reader_config_path(reader_config) %>
+        <%= link_to '删除', reader_config, method: :delete, data: { confirm: '确定删除？' } %>
+      </label>
+    </li>
+  <% end %>
+
+  <% if @reader_configs.size == 0 %>
+    <li class="list-group-item">没有符合条件的记录</li>
+  <% end %>
+</ul>

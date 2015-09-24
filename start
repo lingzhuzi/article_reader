@@ -1,0 +1,2 @@
+rails s
+ruby bin/delayed_job start

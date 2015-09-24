@@ -1,0 +1,29 @@
+<h3>采集任务列表</h3>
+
+<p id="notice"><%= notice %></p>
+
+<% if @tasks.size > 0 %>
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <th>任务ID</th>
+      <th>采集配置</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.job_id %></td>
+        <td><%= task.reader_config.name %></td>
+        <td><%= task.status_name %></td>
+        <td>
+          <%= link_to '详情', task %>
+          <%= link_to '删除', task, method: :delete, data: { confirm: '确定删除？' } %>
+        </td>
+      </tr>
+      <% end %>
+  </table>
+<% else %>
+  <ul class="list-group">
+    <li class="list-group-item">没有符合条件的记录</li>
+  </ul>
+<% end %>

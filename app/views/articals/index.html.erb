@@ -1,0 +1,44 @@
+<h3>文章列表</h3>
+
+<p id="notice"><%= notice %></p>
+
+<%= form_for @artical, method: :get, html: {class: 'form-inline search-form'} do |f| %>
+
+  <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.label :reader_config_id %>
+      <%= f.select :reader_config_id, ReaderConfig.all.collect {|config| [config.name, config.id]}, {include_blank: true}, {class: 'form-control'} %>
+      <%= f.submit '搜索', class: "btn btn-primary" %>
+      <%= link_to '导出', download_articals_path, class: "btn btn-primary btn-download" %>
+  </div>
+
+<% end %>
+
+<ul class="list-group">
+  <% @articals.each do |artical| %>
+    <li class="list-group-item row item-row">
+      <label class="title col-md-10 col-sm-10"><%= link_to artical.title, artical_path(artical), target: "_blank" %></label>
+      <label class="options col-md-2 col-sm-2">
+        <%= link_to '编辑', edit_artical_path(artical) %>
+        <%= link_to '删除', artical, method: :delete, data: { confirm: '确定删除？' } %>
+      </label>
+    </li>
+  <% end %>
+
+  <% if @articals.size == 0 %>
+    <li class="list-group-item">没有符合条件的记录</li>
+  <% end %>
+</ul>
+
+<%= will_paginate @articals, previous_label: '上一页', next_label: '下一页' %>
+<%= content_for :js do %>
+<script type="text/javascript">
+  $(function(){
+    $('.btn-download').click(function(){
+      $(this).parents('form').attr('action', '/download');
+      return true;
+    })
+  })
+</script>
+<% end %>

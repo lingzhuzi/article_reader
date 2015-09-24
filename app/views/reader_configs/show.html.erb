@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reader_config.name %>
+</p>
+
+<p>
+  <strong>Index url:</strong>
+  <%= @reader_config.index_url %>
+</p>
+
+<p>
+  <strong>Index pages:</strong>
+  <%= @reader_config.index_pages %>
+</p>
+
+<p>
+  <strong>Index next page selector:</strong>
+  <%= @reader_config.index_next_page_selector %>
+</p>
+
+<p>
+  <strong>Index next page content:</strong>
+  <%= @reader_config.index_next_page_content %>
+</p>
+
+<p>
+  <strong>Index artical link selector:</strong>
+  <%= @reader_config.index_artical_link_selector %>
+</p>
+
+<p>
+  <strong>Artical content selectors:</strong>
+  <%= @reader_config.artical_content_selectors %>
+</p>
+
+<p>
+  <strong>Artical next page selector:</strong>
+  <%= @reader_config.artical_next_page_selector %>
+</p>
+
+<p>
+  <strong>Artical next page content:</strong>
+  <%= @reader_config.artical_next_page_content %>
+</p>
+
+<%= link_to 'Edit', edit_reader_config_path(@reader_config) %> |
+<%= link_to 'Back', reader_configs_path %>

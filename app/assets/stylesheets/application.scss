@@ -1,0 +1,67 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.menu-bar {
+  margin-top: 10px;
+}
+
+.list-group {
+  .title {
+    min-width: 200px;
+  }
+
+  .options a {
+    margin: 0 5px;
+  }
+}
+
+.item-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.pagination>em.current {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.pagination>a:first-child, .pagination>span:first-child {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination>a, .pagination>span, .pagination>em {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.field-row {
+  margin: 5px;
+
+  .title {
+    text-align: right;
+  }
+
+  .center {
+    text-align: center;
+  }
+}
+
+.search-form {
+  margin: 10px 0;
+
+  .form-control {
+    width: 200px;
+  }
+}
